@@ -1,4 +1,14 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+local ensure_installed = {
+  "kotlin",
+  "java",
+  "lua",
+  "vim",
+  "typescript",
+  "javascript",
+  "php",
+  "sql"
+}
+
 
 -- Customize Treesitter
 -- --------------------
@@ -14,11 +24,7 @@ return {
       highlight = true, -- enable/disable treesitter based highlighting
       indent = true, -- enable/disable treesitter based indentation
       auto_install = true, -- enable/disable automatic installation of detected languages
-      ensure_installed = {
-        "lua",
-        "vim",
-        -- add more arguments for adding more treesitter parsers
-      },
+      ensure_installed = ensure_installed 
     },
   },
 }
