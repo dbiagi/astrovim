@@ -49,6 +49,11 @@ return {
 
       -- the key is the server that is being setup with `vim.lsp.config`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
+
+      -- kotlin_language_server's bundled Kotlin compiler (2.1.0) can't read metadata from
+      -- Kotlin 2.4.0+ projects and defaults to JVM target 1.8. Use JetBrains' official
+      -- kotlin_lsp instead, which stays in sync with current Kotlin releases.
+      kotlin_language_server = false,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
