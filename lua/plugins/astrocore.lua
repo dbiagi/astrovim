@@ -83,6 +83,7 @@ return {
         { ".git" },
         { "node_modules", "package.json" },
       },
+      autochdir = true,
     },
   },
 }
