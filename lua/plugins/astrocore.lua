@@ -75,6 +75,19 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+
+        -- move the default terminal toggle from <F7> to <F12>
+        ["<F7>"] = false,
+        ["<F12>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+      },
+      t = {
+        -- terminal mode, so the mapping also works while inside the terminal
+        ["<F7>"] = false,
+        ["<F12>"] = "<Cmd>ToggleTerm<CR>",
+      },
+      i = {
+        ["<F7>"] = false,
+        ["<F12>"] = "<Esc><Cmd>ToggleTerm<CR>",
       },
     },
     rooter = {

@@ -6,9 +6,10 @@ local ensure_installed = {
   "typescript",
   "javascript",
   "php",
-  "sql"
+  "sql",
+  "terraform",
+  "hcl",
 }
-
 
 -- Customize Treesitter
 -- --------------------
@@ -24,7 +25,7 @@ return {
       highlight = true, -- enable/disable treesitter based highlighting
       indent = true, -- enable/disable treesitter based indentation
       auto_install = true, -- enable/disable automatic installation of detected languages
-      ensure_installed = ensure_installed 
+      ensure_installed = ensure_installed,
     },
   },
 }
