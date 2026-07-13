@@ -97,6 +97,7 @@ return {
         { "node_modules", "package.json" },
       },
       autochdir = true,
+      notify = true,
     },
   },
 }

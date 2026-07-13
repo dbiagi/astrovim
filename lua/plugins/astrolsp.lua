@@ -10,6 +10,7 @@ return {
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
+      signature_help = true,
     },
     formatting = {
       format_on_save = {
@@ -27,6 +28,10 @@ return {
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     config = {
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
+
+      ts_ls = {
+        init_options = {},
+      },
     },
     handlers = {
       -- a function with the key `*` modifies the default handler, functions takes the server name as the parameter
