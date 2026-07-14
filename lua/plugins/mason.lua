@@ -11,7 +11,6 @@ return {
         "lua-language-server",
         "kotlin-lsp",
         "terraform-ls",
-        "typescript-language-server",
 
         -- install formatters
         "stylua",

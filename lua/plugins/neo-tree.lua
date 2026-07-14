@@ -19,6 +19,8 @@ return {
           never_show = {
             ".git",
             "node-modules",
+            ".vscode",
+            ".idea"
           },
         },
         group_empty_dirs = true,

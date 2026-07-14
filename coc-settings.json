@@ -1,0 +1,5 @@
+{
+  "inlayHint.enable": true,
+  "signature.preferShownAbove": false,
+  "signature.hideOnTextChange": true
+}

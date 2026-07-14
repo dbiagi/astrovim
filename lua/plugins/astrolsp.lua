@@ -22,29 +22,14 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "pyright",
+      -- "pyright",
     },
     -- customize language server configuration passed to `vim.lsp.config`
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
     config = {
       -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
-
-      ts_ls = {
-        init_options = {},
-      },
     },
-    handlers = {
-      -- a function with the key `*` modifies the default handler, functions takes the server name as the parameter
-      -- ["*"] = function(server) vim.lsp.enable(server) end
-
-      -- the key is the server that is being setup with `vim.lsp.config`
-      -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-
-      -- kotlin_language_server's bundled Kotlin compiler (2.1.0) can't read metadata from
-      -- Kotlin 2.4.0+ projects and defaults to JVM target 1.8. Use JetBrains' official
-      -- kotlin_lsp instead, which stays in sync with current Kotlin releases.
-      kotlin_language_server = false,
-    },
+    handlers = {},
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
       -- first key is the `augroup` to add the auto commands to (:h augroup)
@@ -67,7 +52,6 @@ return {
         },
       },
     },
-    -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean

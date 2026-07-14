@@ -9,5 +9,6 @@ return {
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.lsp.coc-nvim" },
 }

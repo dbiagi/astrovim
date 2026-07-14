@@ -58,6 +58,7 @@ return {
 
   {
     "windwp/nvim-autopairs",
+    enabled = true,
     config = function(plugin, opts)
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules
@@ -83,6 +84,18 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
+
+      -- Make <CR> confirm a coc.nvim suggestion when the popup is visible,
+      -- and fall back to nvim-autopairs' own <CR> handling (bracket expansion) otherwise.
+      _G.MUtils = _G.MUtils or {}
+      MUtils.coc_autopairs_cr = function()
+        if vim.fn["coc#pum#visible"]() ~= 0 then
+          return vim.fn["coc#pum#confirm"]()
+        else
+          return npairs.autopairs_cr()
+        end
+      end
+      vim.keymap.set("i", "<CR>", "v:lua.MUtils.coc_autopairs_cr()", { expr = true, noremap = true, silent = true })
     end,
   },
 }

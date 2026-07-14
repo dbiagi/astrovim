@@ -1,7 +1,7 @@
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 
-local currentTheme = "catppuccin"
+local currentTheme = "catppuccin-frappe"
 
 --@type LazySpec
 return {
