@@ -24,6 +24,10 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.xml" },
 
+  -- Tests
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.test.nvim-coverage" },
+
   -- Colorschemes
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },

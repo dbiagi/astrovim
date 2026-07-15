@@ -20,13 +20,16 @@ return {
             ".git",
             "node-modules",
             ".vscode",
-            ".idea"
+            ".idea",
           },
         },
         group_empty_dirs = true,
       },
       buffers = {
         group_empty_dirs = true,
+      },
+      window = {
+        auto_expand_width = true,
       },
     },
   },
