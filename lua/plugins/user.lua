@@ -87,15 +87,15 @@ return {
 
       -- Make <CR> confirm a coc.nvim suggestion when the popup is visible,
       -- and fall back to nvim-autopairs' own <CR> handling (bracket expansion) otherwise.
-      _G.MUtils = _G.MUtils or {}
-      MUtils.coc_autopairs_cr = function()
-        if vim.fn["coc#pum#visible"]() ~= 0 then
-          return vim.fn["coc#pum#confirm"]()
-        else
-          return npairs.autopairs_cr()
-        end
-      end
-      vim.keymap.set("i", "<CR>", "v:lua.MUtils.coc_autopairs_cr()", { expr = true, noremap = true, silent = true })
+      -- _G.MUtils = _G.MUtils or {}
+      -- MUtils.coc_autopairs_cr = function()
+      --   if vim.fn["coc#pum#visible"]() ~= 0 then
+      --     return vim.fn["coc#pum#confirm"]()
+      --   else
+      --     return npairs.autopairs_cr()
+      --   end
+      -- end
+      -- vim.keymap.set("i", "<CR>", "v:lua.MUtils.coc_autopairs_cr()", { expr = true, noremap = true, silent = true })
     end,
   },
 }

@@ -51,6 +51,23 @@ return {
           end,
         },
       },
+      lsp_document_highlight = {
+        -- condition to create/delete auto command group
+        cond = "textDocument/documentHighlight",
+        -- list of auto commands to set
+        {
+          -- events to trigger
+          event = { "CursorHold", "CursorHoldI" },
+          -- the rest of the autocmd options (:h nvim_create_autocmd)
+          desc = "Document Highlighting",
+          callback = function() vim.lsp.buf.document_highlight() end,
+        },
+        {
+          event = { "CursorMoved", "CursorMovedI", "BufLeave" },
+          desc = "Document Highlighting Clear",
+          callback = function() vim.lsp.buf.clear_references() end,
+        },
+      },
     },
     mappings = {
       n = {

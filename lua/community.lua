@@ -8,7 +8,9 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
-  { import = "astrocommunity.lsp.coc-nvim" },
+  -- { import = "astrocommunity.lsp.coc-nvim" },
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 }
