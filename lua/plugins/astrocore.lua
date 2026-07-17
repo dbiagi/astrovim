@@ -96,6 +96,9 @@ return {
         { ".git" },
         { "node_modules", "package.json" },
       },
+      ignore = {
+        servers = { "helm_ls", "yamlls" },
+      },
       autochdir = true,
       notify = true,
     },
