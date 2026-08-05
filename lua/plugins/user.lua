@@ -1,22 +1,11 @@
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
-    event = "BufRead",
+    event = "InsertEnter",
     config = function() require("lsp_signature").setup() end,
   },
 
-  -- == Examples of Overriding Plugins ==
-
-  -- customize dashboard options
   {
     "folke/snacks.nvim",
     opts = {
@@ -38,22 +27,6 @@ return {
         },
       },
     },
-  },
-
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-
-      -- include the default astronvim config that calls the setup call
-      require "astronvim.plugins.configs.luasnip"(plugin, opts)
-    end,
   },
 
   {
@@ -84,18 +57,12 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
-
-      -- Make <CR> confirm a coc.nvim suggestion when the popup is visible,
-      -- and fall back to nvim-autopairs' own <CR> handling (bracket expansion) otherwise.
-      -- _G.MUtils = _G.MUtils or {}
-      -- MUtils.coc_autopairs_cr = function()
-      --   if vim.fn["coc#pum#visible"]() ~= 0 then
-      --     return vim.fn["coc#pum#confirm"]()
-      --   else
-      --     return npairs.autopairs_cr()
-      --   end
-      -- end
-      -- vim.keymap.set("i", "<CR>", "v:lua.MUtils.coc_autopairs_cr()", { expr = true, noremap = true, silent = true })
     end,
+  },
+
+  {
+    "linrongbin16/gitlinker.nvim",
+    cmd = "GitLink",
+    opts = {},
   },
 }

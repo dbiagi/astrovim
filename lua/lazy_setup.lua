@@ -23,6 +23,11 @@ require("lazy").setup({
     },
   },
   ui = { backdrop = 100 },
+  -- Local plugin development: plugins with `dev = true` load from here
+  dev = {
+    path = vim.fn.expand "~/Workspace/nvim-plugins",
+    fallback = true, -- fall back to fetching from GitHub if not found locally
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins, add more to your liking
