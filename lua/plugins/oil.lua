@@ -35,15 +35,12 @@ return {
         enabled = false,
       },
       autocmds = {
-        oil_sync_cwd = {
+        oil_set_root_once = {
           {
-            event = "BufEnter",
-            pattern = "oil://*",
-            desc = "Sync Neovim cwd with the current Oil directory",
-            callback = function()
-              local dir = require("oil").get_current_dir()
-              if dir then vim.cmd.cd(dir) end
-            end,
+            event = "VimEnter",
+            desc = "Set Neovim root once on startup to the launch directory",
+            once = true,
+            callback = function() vim.cmd.cd(vim.fn.getcwd()) end,
           },
         },
       },
