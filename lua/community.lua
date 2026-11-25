@@ -40,4 +40,7 @@ return {
 
   -- Unused functions/variables
   { import = "astrocommunity.utility.neodim" },
+
+  -- File Managere
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }

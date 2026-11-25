@@ -18,6 +18,8 @@ return {
         -- Git Link
         ["<Leader>gy"] = { function() require("gitlinker").link() end, desc = "Yank git link" },
         ["<Leader>gY"] = { "<cmd>GitLink!<cr>", desc = "Browse remote" },
+        ["<Leader>e"] = { "<cmd>Oil<cr>", desc = "Open oil file explorer" },
+        ["<Leader>O"] = false,
       },
       t = {
         -- Terminal
