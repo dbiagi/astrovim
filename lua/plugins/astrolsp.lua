@@ -19,6 +19,20 @@ return {
         },
       },
       timeout_ms = 3000, -- default format timeout
+      -- in projects with an ESLint config, ESLint is the only formatter for JS/TS files
+      filter = function(client)
+        local eslint_ft = { javascript = true, javascriptreact = true, typescript = true, typescriptreact = true }
+        local eslint_configs = {
+          "eslint.config.js",
+          "eslint.config.mjs",
+          "eslint.config.cjs",
+          "eslint.config.ts",
+          "eslint.config.mts",
+          "eslint.config.cts",
+        }
+        if eslint_ft[vim.bo.filetype] and vim.fs.root(0, eslint_configs) then return client.name == "eslint" end
+        return true
+      end,
     },
     -- enable servers that you already have installed without mason
     servers = {

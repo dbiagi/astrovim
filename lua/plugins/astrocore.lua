@@ -57,7 +57,7 @@ return {
       ignore = {
         servers = { "helm_ls", "yamlls" },
       },
-      autochdir = true,
+      autochdir = false,
       notify = true,
     },
   },
