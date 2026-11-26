@@ -3,11 +3,22 @@ return {
     "stevearc/oil.nvim",
     lazy = false,
     skip_confirm_for_simple_edits = true,
-
     watch_for_changes = true,
     opts = {
       default_file_explorer = true,
-      view_options = { show_hidden = true },
+      view_options = {
+        show_hidden = true,
+        is_always_hidden = function(name, bufnr)
+          local always_hidden = {
+            [".git"] = true,
+            [".idea"] = true,
+            [".vscode"] = true,
+            ["node_modules"] = true,
+          }
+
+          return always_hidden[name] == true
+        end,
+      },
       keymaps = {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["<CR>"] = "actions.select",
